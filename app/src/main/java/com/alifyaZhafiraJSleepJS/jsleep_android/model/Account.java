@@ -1,7 +1,6 @@
 package com.alifyaZhafiraJSleepJS.jsleep_android.model;
 
-
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.Serializable;
+import com.alifyaZhafiraJSleepJS.jsleep_android.model.*;
 
 public class Account extends Serializable {
 
@@ -29,8 +28,15 @@ public class Account extends Serializable {
     }
 
     public String toString () {
-        return "Name = " + this.name + "\nEmail = " + this.email + "\nPassword = " + this.password;
+        return "Account{" +
+                "balance=" + balance +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", password'" + password + '\'' +
+                ", renter=" + renter +
+                '}';
     }
+
     public Object write(){
         return null;
     }

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.view.Menu;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.alifyaZhafiraJSleepJS.jsleep_android.model.Room;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listId);
         ListView listView = findViewById(R.id.ListViewId);
         listView.setAdapter(adapt);
+
     }
 
     @Override
@@ -82,3 +85,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
