@@ -19,6 +19,12 @@ import com.alifyaZhafiraJSleepJS.jsleep_android.model.Account;
 import com.alifyaZhafiraJSleepJS.jsleep_android.request.BaseApiService;
 import com.alifyaZhafiraJSleepJS.jsleep_android.request.UtilsApi;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText username,password;
@@ -38,10 +44,13 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
+                String name = username.getText().toString();
+                String passwordt = password.getText().toString();
+                Account account = requestLogin(name,passwordt);
+            }
+
                 /*Intent move = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(move);*/
-            }
         });
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -54,11 +63,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    protected Account requestAccount(){
+    protected Account requestAccount() {
         mApiService.getAccount(1).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Account account;
                     account = response.body();
                     System.out.println(account.toString());
@@ -66,12 +75,37 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Account> call, Throwable t){
+            public void onFailure(Call<Account> call, Throwable t) {
                 System.out.println("failed");
                 System.out.println(t.toString());
                 Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
             }
         });
+
+        return null;
+    }
+
+        protected Account requestLogin(String name, String pass){
+            mApiService.login(name, pass).enqueue(new Callback<Account>() {
+                @Override
+                public void onResponse(Call<Account> call, Response<Account> response) {
+                    if(response.isSuccessful()){
+                        Account account;
+                        account = response.body();
+                        System.out.println(account.toString());
+                        Intent move = new Intent(LoginActivity.this,MainActivity.class);
+                        startActivity(move);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Account> call, Throwable t){
+                    System.out.println("failed");
+                    System.out.println(t.toString());
+                    Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         return null;
     }
 }
