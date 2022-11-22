@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText username,password;
     Context mContext;
-
+    public static Account currentAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

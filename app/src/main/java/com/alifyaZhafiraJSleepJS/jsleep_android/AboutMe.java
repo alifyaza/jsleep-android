@@ -1,5 +1,7 @@
 package com.alifyaZhafiraJSleepJS.jsleep_android;
 
+import static com.alifyaZhafiraJSleepJS.jsleep_android.LoginActivity.currentAccount;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -22,9 +24,9 @@ public class AboutMe extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_about_me);
 
-            myname = findViewById(R.id.NameData);
-            myemail = findViewById(R.id.EmailData);
-            mybalance = findViewById(R.id.BalanceData);
+            myname = findViewById(R.id.displayname);
+            myemail = findViewById(R.id.displayemail);
+            mybalance = findViewById(R.id.displaybalance);
 
             myname.setText(currentAccount.name);
             myemail.setText(currentAccount.email);
