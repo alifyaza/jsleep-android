@@ -1,10 +1,4 @@
 package com.alifyaZhafiraJSleepJS.jsleep_android.model;
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.BedType;
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.City;
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.Facility;
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.Price;
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.Serializable;
-
 import java.util.*;
 import java.util.ArrayList;
 
@@ -21,7 +15,7 @@ public class Room extends Serializable
     public int accountId;
 
     public Room(int accountId, String name, int size, Price price, Facility facility, City city, String address) {
-        //super();
+        super();
         this.accountId = accountId;
         this.name = name;
         this.size = size;
@@ -46,15 +40,15 @@ public class Room extends Serializable
 
     public String toString () {
         return "Name = " + name + "\nSize = " + size + "\nPrice = " + price +
-        "\nFacility = " + facility + "\nBed Type = " + bedType + "\nCity = " +
-        city + "\nAddress = " + address;
+                "\nFacility = " + facility + "\nBed Type = " + bedType + "\nCity = " +
+                city + "\nAddress = " + address;
     }
 
     public Object write(){
         return null;
     }
-    
+
     public boolean read(String x){
-        return true;
+        return false;
     }
 }

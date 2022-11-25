@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196f3"
+    tools:context=".DetailRoomActivity">
+
+    <TextView
+        android:id="@+id/DetailRoom"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="52dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="DetailRoom"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NameDR"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="39dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Name"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DetailRoom" />
+
+    <TextView
+        android:id="@+id/nameDR"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="32dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="BedType"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameDR" />
+
+    <TextView
+        android:id="@+id/nameDR2"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="32dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Size"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameDR" />
+
+    <TextView
+        android:id="@+id/nameDR3"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="32dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Price"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameDR2" />
+
+    <TextView
+        android:id="@+id/nameDR4"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="32dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Address"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameDR3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

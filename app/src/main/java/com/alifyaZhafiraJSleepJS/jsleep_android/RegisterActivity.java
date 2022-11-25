@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText name, email, password;
+    EditText name,email,password;
     Context mContext;
 
     @Override
@@ -31,51 +31,51 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        TextView signinbutton = findViewById(R.id.RegisterSignIn);
-        signinbutton.setOnClickListener(new View.OnClickListener() {
+        Button register = findViewById(R.id.RegisterButton);
+        EditText name = findViewById(R.id.RegisterName);
+        EditText email = findViewById(R.id.RegisterEmail);
+        EditText password = findViewById(R.id.RegisterPassword);
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent move = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(move);
+                String tempemail = email.getText().toString();
+                String temppass = password.getText().toString();
+                String tempname = name.getText().toString();
+                Account account = requestRegister(tempemail,temppass,tempname);
             }
         });
-        name = findViewById(R.id.RegisterName);
-        email = findViewById(R.id.RegisterEmail);
-        password = findViewById(R.id.RegisterPassword);
-        Button registerbutton = findViewById(R.id.RegisterButton);
-        registerbutton.setOnClickListener(new View.OnClickListener() {
+
+        TextView Login = findViewById(R.id.RegisterSignIn);
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nameR = name.getText().toString();
-                String emailR = email.getText().toString();
-                String passwordR = password.getText().toString();
-                Account account = requestRegister(nameR, emailR, passwordR);
                 Intent move = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(move);
             }
         });
     }
-
-    protected Account requestRegister(String nameR, String emailR, String passwordR) {
-        mApiService.register(nameR, emailR, passwordR).enqueue(new Callback<Account>() {
+    protected Account requestRegister(String email, String password, String name ){
+        mApiService.register(email, password, name).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
-                if (response.isSuccessful()) {
+                if(response.isSuccessful()){
                     Account account;
                     account = response.body();
                     System.out.println(account.toString());
-                    Intent move = new Intent(RegisterActivity.this, LoginActivity.class);
+                    Intent move = new Intent(RegisterActivity.this,LoginActivity.class);
                     startActivity(move);
+                    System.out.println("Success");
                 }
             }
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                System.out.println("failed");
-                System.out.println(t.toString());
                 Toast.makeText(mContext, "Account Already Registered", Toast.LENGTH_SHORT).show();
+                System.out.println("Failed");
             }
         });
         return null;
     }
+
+
 }

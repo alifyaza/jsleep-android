@@ -1,6 +1,7 @@
 package com.alifyaZhafiraJSleepJS.jsleep_android.model;
 
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Account extends Serializable {
 
@@ -21,22 +22,25 @@ public class Account extends Serializable {
     }
 
     public boolean validate() {
-        if(this.email.matches(REGEX_EMAIL) && this.password.matches(REGEX_PASSWORD)){
+        /*if(this.email.matches(REGEX_EMAIL) && this.password.matches(REGEX_PASSWORD)){
             return true;
         }
-        return false;
+        return false;*/
+        Pattern patternEmail = Pattern.compile(REGEX_EMAIL);
+        Matcher matcherEmail = patternEmail.matcher(email);
+        boolean matchFoundEmail = matcherEmail.find();
+        Pattern patternPassword = Pattern.compile(REGEX_PASSWORD);
+        Matcher matcherPassword = patternPassword.matcher(password);
+        boolean matchFoundPassword = matcherPassword.find();
+        if (matchFoundEmail && matchFoundPassword)
+            return true;
+        else
+            return false;
     }
 
     public String toString () {
-        return "Account{" +
-                "balance=" + balance +
-                ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", password'" + password + '\'' +
-                ", renter=" + renter +
-                '}';
+        return "Name = " + this.name + "\nEmail = " + this.email + "\nPassword = " + this.password;
     }
-
     public Object write(){
         return null;
     }

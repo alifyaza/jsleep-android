@@ -27,47 +27,40 @@ import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText username,password;
+    EditText username,password,email;
     Context mContext;
-    public static Account currentAccount;
+    protected static Account currentAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        TextView register = findViewById(R.id.LoginSignUp);
-        Button login = findViewById(R.id.LoginButton);
         username = findViewById(R.id.LoginUsername);
         password = findViewById(R.id.LoginPassword);
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = username.getText().toString();
-                String passwordt = password.getText().toString();
-                Account account = requestLogin(name,passwordt);
-            }
-
-                /*Intent move = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(move);*/
-        });
-
-        register.setOnClickListener(new View.OnClickListener() {
+        TextView Register = findViewById(R.id.LoginSignUp);
+        Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(move);
             }
-
+        });
+        Button loginButton = findViewById(R.id.LoginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email_temp = username.getText().toString();
+                String pass_temp = password.getText().toString();
+                Account account = requestLogin(email_temp,pass_temp);
+            }
         });
     }
-
-    protected Account requestAccount() {
-        mApiService.getAccount(1).enqueue(new Callback<Account>() {
+    protected Account requestAccount(){
+        mApiService.getAccount(0).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
-                if (response.isSuccessful()) {
+                if(response.isSuccessful()){
                     Account account;
                     account = response.body();
                     System.out.println(account.toString());
@@ -76,36 +69,31 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                System.out.println("failed");
-                System.out.println(t.toString());
-                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "no Account id = 0", Toast.LENGTH_SHORT).show();
             }
         });
-
         return null;
     }
-
-        protected Account requestLogin(String name, String pass){
-            mApiService.login(name, pass).enqueue(new Callback<Account>() {
-                @Override
-                public void onResponse(Call<Account> call, Response<Account> response) {
-                    if(response.isSuccessful()){
-                        Account account;
-                        account = response.body();
-                        System.out.println(account.toString());
-                        Intent move = new Intent(LoginActivity.this,MainActivity.class);
-                        startActivity(move);
-                    }
+    protected Account requestLogin(String email,String password){
+        mApiService.login(email,password).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if(response.isSuccessful()){
+                    System.out.println("Login Success");
+                    Account account;
+                    account = response.body();
+                    currentAccount = account;
+                    System.out.println(account.toString());
+                    Intent move = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(move);
                 }
+            }
 
-                @Override
-                public void onFailure(Call<Account> call, Throwable t){
-                    System.out.println("failed");
-                    System.out.println(t.toString());
-                    Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
-                }
-            });
-
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
+                Toast.makeText(mContext, "Login Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
         return null;
     }
 }

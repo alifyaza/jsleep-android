@@ -1,7 +1,7 @@
 package com.alifyaZhafiraJSleepJS.jsleep_android.model;
 
-
-import com.alifyaZhafiraJSleepJS.jsleep_android.model.Serializable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Renter extends Serializable
 {
@@ -20,10 +20,21 @@ public class Renter extends Serializable
     }
 
     public boolean validate() {
-        if(this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE)){
+        /*if(this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE)){
             return true;
         }
-        return false;
+        return false;*/
+        Pattern patternName = Pattern.compile(this.REGEX_NAME);
+        Matcher nameMatcher = patternName.matcher(this.username);
+        boolean matchFoundName = nameMatcher.find();
+        Pattern patternPhone = Pattern.compile(this.REGEX_PHONE);
+        Matcher phoneMatcher = patternPhone.matcher(this.phoneNumber);
+        boolean matchFoundNum = phoneMatcher.find();
+
+        if (matchFoundNum && matchFoundName)
+            return true;
+        else
+            return false;
     }
     /*public Renter(int id, String username)
     {

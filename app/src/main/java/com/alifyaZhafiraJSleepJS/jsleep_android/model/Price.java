@@ -1,19 +1,20 @@
 package com.alifyaZhafiraJSleepJS.jsleep_android.model;
 
+
 public class Price
 {
     public double price;
     public double discount;
-    
+
     public Price (double price) {
         this.price = price;
     }
-    
+
     public Price (double price, double discount) {
         this.price = price;
         this.discount = discount;
     }
-    
+
     public String toString() {
         return "Price = " + this.price + "\nDiscount = " + this.discount;
     }

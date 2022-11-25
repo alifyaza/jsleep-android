@@ -8,26 +8,203 @@
     android:visibility="visible"
     tools:context="AboutMe">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="376dp"
+        android:layout_height="355dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="39dp"
+        android:backgroundTint="#2195F2"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:onClick="expand"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true" >
+
+            <Button
+                android:id="@+id/RegisterRenterButton"
+                android:layout_width="324dp"
+                android:layout_height="56dp"
+                android:backgroundTint="#FE9700"
+                android:text="Register Renter"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="350dp" />
+
+            <EditText
+                android:id="@+id/RenterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="21"
+                android:gravity="start"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="Name"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:visibility="gone"
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="426dp" />
+
+            <EditText
+                android:id="@+id/RenterAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="21"
+                android:gravity="start"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="Address"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:visibility="gone"
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="491dp" />
+
+            <EditText
+                android:id="@+id/RenterPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="21"
+                android:gravity="start"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="Phone Number"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:visibility="gone"
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Button
+                android:id="@+id/CancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_weight="7"
+                android:backgroundTint="#FF9800"
+                android:text="Cancel"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/RegisterButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:backgroundTint="#FF9800"
+                android:text="Register"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
-        android:id="@+id/LoginWelcome"
-        android:layout_width="184dp"
-        android:layout_height="33dp"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/outputbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="147dp"
-        android:layout_marginEnd="182dp"
-        android:gravity="top"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:gravity="left"
         android:letterSpacing="0.06"
         android:lineSpacingExtra="-6sp"
-        android:text="Account Details"
+        android:text="Balance"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputemail" />
+
+    <EditText
+        android:id="@+id/Amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="44dp"
+        android:ems="7"
+        android:gravity="center"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Amount"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputbalance" />
+
+    <TextView
+        android:id="@+id/outputemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="26dp"
+        android:gravity="left"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Email"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputname" />
+
+    <TextView
+        android:id="@+id/outputname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="34dp"
+        android:gravity="left"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Name"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/AccountDetails" />
+
+    <Button
+        android:id="@+id/topup_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="88dp"
+        android:layout_weight="1"
+        android:backgroundTint="#FF9800"
+        android:text="TOP UP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displaybalance" />
+
+    <TextView
+        android:id="@+id/displaybalance"
+        android:layout_width="134dp"
+        android:layout_height="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="46dp"
+        android:gravity="end"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="0.0"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayemail" />
 
     <TextView
         android:id="@+id/displayname"
@@ -35,8 +212,8 @@
         android:layout_height="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="231dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="46dp"
         android:gravity="end"
         android:letterSpacing="0.06"
         android:lineSpacingExtra="-6sp"
@@ -52,8 +229,8 @@
         android:layout_height="18dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="46dp"
         android:gravity="end"
         android:letterSpacing="0.06"
         android:lineSpacingExtra="-6sp"
@@ -64,117 +241,24 @@
         app:layout_constraintTop_toBottomOf="@+id/displayname" />
 
     <TextView
-        android:id="@+id/displaybalance"
-        android:layout_width="134dp"
-        android:layout_height="15dp"
-        android:layout_alignParentStart="true"
+        android:id="@+id/AccountDetails"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="371dp"
-        android:gravity="end"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="180dp"
+        android:gravity="top"
         android:letterSpacing="0.06"
         android:lineSpacingExtra="-6sp"
-        android:text="0.0"
+        android:text="Account Details"
         android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayemail" />
-
-    <TextView
-        android:id="@+id/outputname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="147dp"
-        android:layout_marginBottom="36dp"
-        android:gravity="left"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="Name"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/outputemail"
-        app:layout_constraintEnd_toStartOf="@+id/displayname"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginWelcome" />
-
-    <TextView
-        android:id="@+id/outputemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="148dp"
-        android:gravity="left"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="Email"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/displayemail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outputname" />
-
-    <TextView
-        android:id="@+id/outputbalance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="371dp"
-        android:gravity="left"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="Balance"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/displaybalance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outputemail" />
-
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="287dp"
-        android:ems="7"
-        android:gravity="center"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="Amount"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outputbalance" />
-
-    <Button
-        android:id="@+id/topup_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="93dp"
-        android:layout_marginBottom="287dp"
-        android:layout_weight="1"
-        android:backgroundTint="#FF9800"
-        android:text="TOP UP"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

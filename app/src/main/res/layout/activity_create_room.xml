@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context=".CreateRoomActivity">
+
+    <EditText
+        android:id="@+id/SizeCR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="46dp"
+        android:ems="21"
+        android:gravity="start"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Size"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressCR" />
+
+    <EditText
+        android:id="@+id/PriceCR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="46dp"
+        android:ems="21"
+        android:gravity="start"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Price"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameCR" />
+
+    <TextView
+        android:id="@+id/CreateRoom"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="46dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Create Room"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/AddressCR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="46dp"
+        android:ems="21"
+        android:gravity="start"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Address"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PriceCR" />
+
+    <EditText
+        android:id="@+id/NameCR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="46dp"
+        android:ems="21"
+        android:gravity="start"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Name"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateRoom" />
+
+    <TextView
+        android:id="@+id/FacilityCR"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="182dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Facility"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SizeCR" />
+
+    <CheckBox
+        android:id="@+id/AC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="9dp"
+        android:text="AC"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FacilityCR" />
+
+    <CheckBox
+        android:id="@+id/Bathtub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="1dp"
+        android:text="Bathtub"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AC" />
+
+    <CheckBox
+        android:id="@+id/SwimmingPool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="1dp"
+        android:text="SwimmingPool"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bathtub" />
+
+    <CheckBox
+        android:id="@+id/Refrigerator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="9dp"
+        android:text="Refrigerator"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/AC"
+        app:layout_constraintTop_toBottomOf="@+id/FacilityCR" />
+
+    <CheckBox
+        android:id="@+id/Balcony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="2dp"
+        android:text="Balcony"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/Bathtub"
+        app:layout_constraintTop_toBottomOf="@+id/Refrigerator" />
+
+    <CheckBox
+        android:id="@+id/Wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="71dp"
+        android:text="Wifi"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/Refrigerator"
+        app:layout_constraintTop_toBottomOf="@+id/SizeCR" />
+
+    <CheckBox
+        android:id="@+id/Restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="1dp"
+        android:text="Restaurant"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/Balcony"
+        app:layout_constraintTop_toBottomOf="@+id/Wifi" />
+
+    <CheckBox
+        android:id="@+id/FitnessCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:text="FitnessCenter"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/SwimmingPool"
+        app:layout_constraintTop_toBottomOf="@+id/Balcony" />
+
+    <TextView
+        android:id="@+id/CityCR"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="City"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwimmingPool" />
+
+    <TextView
+        android:id="@+id/BedTypeCR"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="30dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Bed Type"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CityCR" />
+
+    <Spinner
+        android:id="@+id/CitySpinner"
+        android:layout_width="136dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FitnessCenter"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Spinner
+        android:id="@+id/BedTypeSpinner"
+        android:layout_width="136dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CitySpinner"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
