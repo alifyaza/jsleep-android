@@ -23,6 +23,6 @@ public interface BaseApiService {
     Call<Renter> getRenter(@Path("id") int id);
 
     @POST("renter/registerRenter")
-    Call<Renter> registerRenter (@Query("username") String username, @Query("address") String address, @Query("phoneNumber") String phoneNumber);
+    Call<Renter> registerRenter(int id, @Query("username") String username, @Query("address") String address, @Query("phoneNumber") String phoneNumber);
 }
 
