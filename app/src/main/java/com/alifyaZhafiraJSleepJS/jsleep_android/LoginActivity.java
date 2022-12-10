@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println("Login Success");
                     Account account;
                     account = response.body();
-                    currentAccount = account;
+                    MainActivity.loginacc = account;
                     System.out.println(account.toString());
                     Intent move = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(move);

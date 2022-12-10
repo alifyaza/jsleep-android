@@ -88,8 +88,8 @@ public class AboutMeActivity extends AppCompatActivity {
                     RegisterReqB.setOnClickListener(new View.OnClickListener()
                     {
                         @Override
-                        public void onClick(View view) {
-                            requestRenter();
+                        public void onClick(View view)  {
+                            Renter accountRenter = requestRenter();
                         }
                     });
                     CancelReqB.setOnClickListener(new View.OnClickListener() {
