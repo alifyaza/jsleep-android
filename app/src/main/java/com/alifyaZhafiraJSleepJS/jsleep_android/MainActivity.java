@@ -79,16 +79,20 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(roomArrayAdapter);*/
     }
 
-    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.person_button) {
-            Toast.makeText(this, "Opening Profile", Toast.LENGTH_SHORT).show();
-            Intent move = new Intent(MainActivity.this, AboutMeActivity.class);
-            startActivity(move);
-            return true;
+        Intent aboutMe = new Intent (MainActivity.this, AboutMeActivity.class);
+        switch (item.getItemId()){
+            case R.id.person_button:
+                Toast.makeText(this, "Opening Profile", Toast.LENGTH_SHORT).show();
+                startActivity(aboutMe);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

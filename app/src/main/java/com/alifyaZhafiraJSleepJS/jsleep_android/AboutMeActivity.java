@@ -30,7 +30,7 @@ public class AboutMeActivity extends AppCompatActivity {
     Context mContext;
     BaseApiService mApiService;
 
-    TextView name, email, balance;
+    TextView nameAcc, emailAcc, balanceAcc;
     EditText RenterNameText,RenterAddressText,RenterPhoneNumberText;
     Button RegisterRenterB, RegisterReqB, CancelReqB;
     TextView InputName, InputAddress, InputPhoneNumber;
@@ -40,16 +40,15 @@ public class AboutMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_me);
 
-        Account currentAccount = MainActivity.loginacc;
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        name = findViewById(R.id.displayname);
-        name.setText(currentAccount.name);
-        email = findViewById(R.id.displayemail);
-        email.setText(currentAccount.email);
-        balance = findViewById(R.id.displaybalance);
-        balance.setText(String.valueOf(currentAccount.balance));
+        nameAcc = findViewById(R.id.displayname);
+        nameAcc.setText(MainActivity.loginacc.name);
+        emailAcc = findViewById(R.id.displayemail);
+        emailAcc.setText(MainActivity.loginacc.email);
+        balanceAcc = findViewById(R.id.displaybalance);
+        balanceAcc.setText(String.valueOf(MainActivity.loginacc.balance));
 
         RegisterRenterB = findViewById(R.id.RegisterRenterButton);
 
