@@ -25,6 +25,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import android.view.MenuItem;
 
+/**
+ * @author Alifya
+ * @created 11-Dec-2022 11:32 PM
+ *
+ */
+
+/*
+responsible for displaying details about the user's account and
+allowing them to register as a renter
+ */
+
 public class AboutMeActivity extends AppCompatActivity {
     Context mContext;
     BaseApiService mApiService;
@@ -72,46 +83,58 @@ public class AboutMeActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        RegisterRenterB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CardViewRegisterRenter.setVisibility(View.INVISIBLE);
-                CardViewInput.setVisibility(View.VISIBLE);
-                CardViewDisplay.setVisibility(View.INVISIBLE);
-            }
-        });
-
-        if(MainActivity.loginacc.renter == null) {
+        if (MainActivity.loginacc.renter == null)
+        {
             CardViewRegisterRenter.setVisibility(View.VISIBLE);
+            CardViewInput.setVisibility(View.INVISIBLE);
             CardViewDisplay.setVisibility(View.INVISIBLE);
-            CardViewInput.setVisibility(View.INVISIBLE);
-        }
-        else {
+            RegisterRenterB.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view) {
+                    CardViewRegisterRenter.setVisibility(View.INVISIBLE);
+                    CardViewInput.setVisibility(View.VISIBLE);
+                    CardViewDisplay.setVisibility(View.INVISIBLE);
+
+                    RegisterReqB.setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View view)  {
+                            /*int id_temp = MainActivity.loginacc.id;
+                            String username_temp = RenterNameText.getText().toString();
+                            String address_temp = RenterAddressText.getText().toString();
+                            String phoneNumb_temp = RenterPhoneNumberText.getText().toString();
+                            Renter accountRenter = requestRenter(id_temp, username_temp, address_temp, phoneNumb_temp);*/
+                            CardViewRegisterRenter.setVisibility(View.INVISIBLE);
+                            CardViewInput.setVisibility(View.INVISIBLE);
+                            CardViewDisplay.setVisibility(View.VISIBLE);
+
+                        }
+                    });
+                    CancelReqB.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            CardViewRegisterRenter.setVisibility(View.VISIBLE);
+                            CardViewInput.setVisibility(View.INVISIBLE);
+                            CardViewDisplay.setVisibility(View.INVISIBLE);
+                        }
+                    });
+                }
+            });
+
+        } if(MainActivity.loginacc.renter != null){
             CardViewRegisterRenter.setVisibility(View.INVISIBLE);
-            CardViewDisplay.setVisibility(View.VISIBLE);
             CardViewInput.setVisibility(View.INVISIBLE);
+            CardViewDisplay.setVisibility(View.VISIBLE);
+
             InputName.setText(MainActivity.loginacc.renter.username);
             InputAddress.setText(MainActivity.loginacc.renter.address);
             InputPhoneNumber.setText(MainActivity.loginacc.renter.phoneNumber);
         }
 
-        RegisterReqB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CardViewDisplay.setVisibility(View.VISIBLE);
-                CardViewRegisterRenter.setVisibility(View.INVISIBLE);
-                CardViewInput.setVisibility(View.INVISIBLE);
-                Renter renter = requestRenter(MainActivity.loginacc.id, RenterNameText.getText().toString(), RenterAddressText.getText().toString(), RenterPhoneNumberText.getText().toString());
-            }
-        });
-        CancelReqB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CardViewRegisterRenter.setVisibility(View.INVISIBLE);
-                CardViewDisplay.setVisibility(View.INVISIBLE);
-                CardViewInput.setVisibility(View.VISIBLE);
-            }
-        });
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
     }
 
     /*public boolean onOptionsItemSelected(@NonNull MenuItem item) {

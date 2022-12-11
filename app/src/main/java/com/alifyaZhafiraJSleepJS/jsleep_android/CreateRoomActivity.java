@@ -3,6 +3,7 @@ package com.alifyaZhafiraJSleepJS.jsleep_android;
 import static com.alifyaZhafiraJSleepJS.jsleep_android.R.id.nameRoom;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -44,12 +45,17 @@ public class CreateRoomActivity extends AppCompatActivity {
     BedType bedType;
     Price price;
     City city;
+    ArrayList<Facility> facilities = new ArrayList<>();
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_room);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         mApiService = UtilsApi.getApiService();
         mContext = this;
         nameRoom = findViewById(R.id.nameRoom);
@@ -78,7 +84,6 @@ public class CreateRoomActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("onclick success");
-                ArrayList<Facility> facilities = new ArrayList<>();
                 if (Ac.isChecked()) {
                     facilities.add(Facility.AC);
                 }
@@ -112,33 +117,33 @@ public class CreateRoomActivity extends AppCompatActivity {
                 Integer priceObj = new Integer(priceRoom.getText().toString());
                 Integer sizeObj = new Integer(sizeRoom.getText().toString());
 
-                int IntSize = priceObj.parseInt(sizeRoom.getText().toString());
                 int IntPrice = sizeObj.parseInt(priceRoom.getText().toString());
+                int IntSize = priceObj.parseInt(sizeRoom.getText().toString());
 
-                System.out.println("request before");
+                System.out.println("name" + nameRoom);
+                System.out.println("price" + priceRoom);
 
                 requestRoom(MainActivity.loginacc.id, nameRoom.getText().toString(), IntSize, IntPrice, facilities, city, addressRoom.getText().toString(), bedType);
             }
         });
     }
-
-    /*public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    /*public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_menu, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.home_button:
-                Intent aboutMe = new Intent (CreateRoomActivity.this, MainActivity.class);
+                Intent move = new Intent (CreateRoomActivity.this, MainActivity.class);
                 Toast.makeText(this, "Opening Home", Toast.LENGTH_SHORT).show();
-                startActivity(aboutMe);
+                startActivity(move);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }*/
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.top_menu, menu);
-        return true;
-    }
 
     protected Room requestRoom(int id, String name, int size, int price, ArrayList<Facility> facility, City city, String address, BedType bedType) {
         //System.out.println(facility);
