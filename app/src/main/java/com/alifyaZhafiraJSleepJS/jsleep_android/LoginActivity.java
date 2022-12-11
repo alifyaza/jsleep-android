@@ -25,6 +25,16 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+/**
+ * @author Alifya
+ * @created 11-Dec-2022 11:32 PM
+ *
+ */
+
+/* provides user with a login screen, where
+they can enter their email and password
+ */
+
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText username,password,email;
@@ -39,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.LoginUsername);
         password = findViewById(R.id.LoginPassword);
         TextView Register = findViewById(R.id.LoginSignUp);
+
+        //when the user click SignUp
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,10 +58,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(move);
             }
         });
+
+        //when the user click login button
         Button loginButton = findViewById(R.id.LoginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //passing user's email and password
                 String email_temp = username.getText().toString();
                 String pass_temp = password.getText().toString();
                 Account account = requestLogin(email_temp,pass_temp);

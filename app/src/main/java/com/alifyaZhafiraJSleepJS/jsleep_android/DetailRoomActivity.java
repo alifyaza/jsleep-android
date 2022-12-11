@@ -17,6 +17,12 @@ import com.alifyaZhafiraJSleepJS.jsleep_android.model.Room;
 import com.alifyaZhafiraJSleepJS.jsleep_android.request.BaseApiService;
 import com.alifyaZhafiraJSleepJS.jsleep_android.request.UtilsApi;
 
+/**
+ * @author Alifya
+ * @created 11-Dec-2022 11:32 PM
+ *
+ */
+
 /* The activity is responsible for displaying
 details about a hotel room in a layout
  */

@@ -34,6 +34,13 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+/**
+ * @author Alifya
+ * @created 11-Dec-2022 11:32 PM
+ *
+ */
+
+/* This class used to create a new room*/
 
 public class CreateRoomActivity extends AppCompatActivity {
     BaseApiService mApiService;
@@ -113,6 +120,8 @@ public class CreateRoomActivity extends AppCompatActivity {
 
                 bedType = BedType.valueOf(bed);
                 city = City.valueOf(cityStr);
+
+                /* converts the price and size fields to integers */
 
                 Integer priceObj = new Integer(priceRoom.getText().toString());
                 Integer sizeObj = new Integer(sizeRoom.getText().toString());

@@ -31,6 +31,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * @author Alifya
+ * @created 11-Dec-2022 11:32 PM
+ *
+ */
+
+/* A main screen of the app,
+which displays a list of rooms
+*/
 
 public class MainActivity extends AppCompatActivity {
 
@@ -88,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         buttonNext = findViewById(R.id.next_button);
         buttonPrev = findViewById(R.id.prev_button);
 
+        //to see next page of room list
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //to see previous page of room list
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

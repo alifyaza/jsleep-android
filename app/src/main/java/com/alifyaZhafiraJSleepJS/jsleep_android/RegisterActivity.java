@@ -20,6 +20,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * @author Alifya
+ * @created 11-Dec-2022 11:32 PM
+ *
+ */
+
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText name,email,password;
