@@ -189,8 +189,8 @@
 
     <TextView
         android:id="@+id/AddressOutput"
-        android:layout_width="326dp"
-        android:layout_height="30dp"
+        android:layout_width="310dp"
+        android:layout_height="38dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="11dp"
@@ -204,5 +204,146 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddressDR" />
+
+    <TextView
+        android:id="@+id/FacilityDR"
+        android:layout_width="310dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="24dp"
+        android:gravity="top"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Facility"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressOutput" />
+
+    <CheckBox
+        android:id="@+id/CheckBathTub"
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="#FE9700"
+        android:text="BathTub"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/CheckWiFi"
+        app:layout_constraintTop_toBottomOf="@+id/FacilityDR" />
+
+    <CheckBox
+        android:id="@+id/CheckWiFi"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="#FE9700"
+        android:text="WiFi"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/CheckAC"
+        app:layout_constraintTop_toBottomOf="@+id/FacilityDR" />
+
+    <CheckBox
+        android:id="@+id/CheckAC"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="#FE9700"
+        android:text="AC"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FacilityDR"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/CheckBalcony"
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FE9700"
+        android:text="Balcony"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CheckWiFi"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/CheckRestaurant"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FE9700"
+        android:text="Restaurant"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/CheckBalcony"
+        app:layout_constraintTop_toBottomOf="@+id/CheckBathTub" />
+
+    <CheckBox
+        android:id="@+id/CheckRefrigirator"
+        android:layout_width="103dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FE9700"
+        android:text="Refrigerator"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/CheckRestaurant"
+        app:layout_constraintTop_toBottomOf="@+id/CheckBathTub"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/CheckFitness"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FE9700"
+        android:text="Fitness"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/CheckSwimming"
+        app:layout_constraintTop_toBottomOf="@+id/CheckRestaurant"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/CheckSwimming"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FE9700"
+        android:text="Swimming"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CheckBalcony"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/CheckoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="#FE9700"
+        android:text="CheckOut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CheckFitness" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
