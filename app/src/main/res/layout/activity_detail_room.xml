@@ -20,7 +20,7 @@
         android:lineSpacingExtra="-6sp"
         android:text="DetailRoom"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/DetailRoom" />
 
     <TextView
-        android:id="@+id/nameDR"
+        android:id="@+id/BedTypeDR"
         android:layout_width="184dp"
         android:layout_height="0dp"
         android:layout_alignParentLeft="true"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/NameDR" />
 
     <TextView
-        android:id="@+id/nameDR2"
+        android:id="@+id/SizeDR"
         android:layout_width="184dp"
         android:layout_height="0dp"
         android:layout_alignParentLeft="true"
@@ -77,10 +77,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameDR" />
+        app:layout_constraintTop_toBottomOf="@+id/BedTypeDR" />
 
     <TextView
-        android:id="@+id/nameDR3"
+        android:id="@+id/PriceDR"
         android:layout_width="184dp"
         android:layout_height="0dp"
         android:layout_alignParentLeft="true"
@@ -95,10 +95,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameDR2" />
+        app:layout_constraintTop_toBottomOf="@+id/SizeDR" />
 
     <TextView
-        android:id="@+id/nameDR4"
+        android:id="@+id/AddressDR"
         android:layout_width="184dp"
         android:layout_height="0dp"
         android:layout_alignParentLeft="true"
@@ -113,6 +113,96 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameDR3" />
+        app:layout_constraintTop_toBottomOf="@+id/PriceDR" />
+
+    <TextView
+        android:id="@+id/NameOutput"
+        android:layout_width="143dp"
+        android:layout_height="23dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="46dp"
+        android:gravity="top|end"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Name"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/BedTypeOutput"
+        android:layout_width="142dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="46dp"
+        android:gravity="top|end"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="BedType"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameOutput" />
+
+    <TextView
+        android:id="@+id/SizeOutput"
+        android:layout_width="143dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="46dp"
+        android:gravity="top|end"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Size"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BedTypeOutput" />
+
+    <TextView
+        android:id="@+id/PriceOutput"
+        android:layout_width="143dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="46dp"
+        android:gravity="top|end"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Price"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SizeOutput" />
+
+    <TextView
+        android:id="@+id/AddressOutput"
+        android:layout_width="326dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="46dp"
+        android:gravity="top|end"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-6sp"
+        android:text="Address"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressDR" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

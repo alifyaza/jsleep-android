@@ -7,257 +7,296 @@
     android:background="#2196F3"
     tools:context=".CreateRoomActivity">
 
-    <EditText
-        android:id="@+id/SizeCR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="46dp"
-        android:ems="21"
-        android:gravity="start"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="Size"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="679dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="26dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddressCR" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/PriceCR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="46dp"
-        android:ems="21"
-        android:gravity="start"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="Price"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NameCR" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
+            app:cardBackgroundColor="#2196F3">
 
-    <TextView
-        android:id="@+id/CreateRoom"
-        android:layout_width="184dp"
-        android:layout_height="0dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="46dp"
-        android:gravity="top"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="Create Room"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="match_parent"
+                android:background="#2196F3"
+                android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/AddressCR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="46dp"
-        android:ems="21"
-        android:gravity="start"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="Address"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PriceCR" />
+                <TextView
+                    android:id="@+id/createRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#2196F3"
+                    android:gravity="center_horizontal"
+                    android:text="Create Room"
+                    android:textColor="@color/white"
+                    android:textSize="32sp" />
 
-    <EditText
-        android:id="@+id/NameCR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="46dp"
-        android:ems="21"
-        android:gravity="start"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="Name"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CreateRoom" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Name"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
 
-    <TextView
-        android:id="@+id/FacilityCR"
-        android:layout_width="184dp"
-        android:layout_height="0dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="182dp"
-        android:gravity="top"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="Facility"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SizeCR" />
+                <EditText
+                    android:id="@+id/nameRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Name"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
 
-    <CheckBox
-        android:id="@+id/AC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="9dp"
-        android:text="AC"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FacilityCR" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Price"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
 
-    <CheckBox
-        android:id="@+id/Bathtub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="1dp"
-        android:text="Bathtub"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AC" />
+                <EditText
+                    android:id="@+id/priceRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Price"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
 
-    <CheckBox
-        android:id="@+id/SwimmingPool"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="1dp"
-        android:text="SwimmingPool"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Bathtub" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Address"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
 
-    <CheckBox
-        android:id="@+id/Refrigerator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="9dp"
-        android:text="Refrigerator"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/AC"
-        app:layout_constraintTop_toBottomOf="@+id/FacilityCR" />
+                <EditText
+                    android:id="@+id/addressRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Address"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
-    <CheckBox
-        android:id="@+id/Balcony"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="2dp"
-        android:text="Balcony"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/Bathtub"
-        app:layout_constraintTop_toBottomOf="@+id/Refrigerator" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Size"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
 
-    <CheckBox
-        android:id="@+id/Wifi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="71dp"
-        android:text="Wifi"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/Refrigerator"
-        app:layout_constraintTop_toBottomOf="@+id/SizeCR" />
+                <EditText
+                    android:id="@+id/sizeRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Size"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
 
-    <CheckBox
-        android:id="@+id/Restaurant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="1dp"
-        android:text="Restaurant"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/Balcony"
-        app:layout_constraintTop_toBottomOf="@+id/Wifi" />
+                <TextView
+                    android:id="@+id/facilityRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Facility"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
-    <CheckBox
-        android:id="@+id/FitnessCenter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:text="FitnessCenter"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/SwimmingPool"
-        app:layout_constraintTop_toBottomOf="@+id/Balcony" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/CityCR"
-        android:layout_width="184dp"
-        android:layout_height="0dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp"
-        android:gravity="top"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="City"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SwimmingPool" />
+                    <CheckBox
+                        android:id="@+id/CheckAC"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="AC"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/BedTypeCR"
-        android:layout_width="184dp"
-        android:layout_height="0dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="30dp"
-        android:gravity="top"
-        android:letterSpacing="0.06"
-        android:lineSpacingExtra="-6sp"
-        android:text="Bed Type"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CityCR" />
+                    <CheckBox
+                        android:id="@+id/CheckWiFi"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="WiFi"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
 
-    <Spinner
-        android:id="@+id/CitySpinner"
-        android:layout_width="136dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="46dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FitnessCenter"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/CheckBathTub"
+                        android:layout_width="85dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="BathTub"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
 
-    <Spinner
-        android:id="@+id/BedTypeSpinner"
-        android:layout_width="136dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="46dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CitySpinner"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/CheckBalcony"
+                        android:layout_width="85dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="Balcony"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <CheckBox
+                        android:id="@+id/CheckRestaurant"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="Restaurant"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+
+                    <CheckBox
+                        android:id="@+id/CheckRefrigirator"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="Refrigerator"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/CheckSwimming"
+                        android:layout_width="110dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="Swimming"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+
+                    <CheckBox
+                        android:id="@+id/CheckFitness"
+                        android:layout_width="110dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:backgroundTint="#FE9700"
+                        android:text="Fitness"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#2196F3"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/cityDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:text="City"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Spinner
+                        android:id="@+id/SpinnerCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="75dp"
+                        android:textColor="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bedTypeDef"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Bed Type"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                    <Spinner
+                        android:id="@+id/SpinnerBed"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="40dp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/CreateRoomButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FE9700"
+                    android:insetLeft="0dp"
+                    android:insetTop="20dp"
+                    android:text="create" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

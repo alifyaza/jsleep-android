@@ -163,23 +163,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/RegisterRenterButton"
-        android:layout_width="314dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="46dp"
-        android:backgroundTint="#FE9700"
-        android:text="Register Renter"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardViewRegister"
+        android:id="@+id/CardViewInput"
         android:layout_width="360dp"
         android:layout_height="290dp"
         android:layout_marginBottom="45dp"
@@ -298,7 +283,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardViewInput"
+        android:id="@+id/CardViewDisplay"
         android:layout_width="360dp"
         android:layout_height="290dp"
         android:layout_marginBottom="45dp"
@@ -328,7 +313,7 @@
                 android:lineSpacingExtra="-6sp"
                 android:text="Your Data"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -446,6 +431,32 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewRegisterRenter"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        app:cardBackgroundColor="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/RegisterRenterButton"
+            android:layout_width="314dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginEnd="46dp"
+            android:backgroundTint="#FE9700"
+            android:text="Register Renter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.472" />
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
