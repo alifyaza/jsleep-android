@@ -72,58 +72,46 @@ public class AboutMeActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        if (MainActivity.loginacc.renter == null)
-        {
+        RegisterRenterB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CardViewRegisterRenter.setVisibility(View.INVISIBLE);
+                CardViewInput.setVisibility(View.VISIBLE);
+                CardViewDisplay.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        if(MainActivity.loginacc.renter == null) {
             CardViewRegisterRenter.setVisibility(View.VISIBLE);
-            CardViewInput.setVisibility(View.INVISIBLE);
             CardViewDisplay.setVisibility(View.INVISIBLE);
-            RegisterRenterB.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view) {
-                    CardViewRegisterRenter.setVisibility(View.INVISIBLE);
-                    CardViewInput.setVisibility(View.VISIBLE);
-                    CardViewDisplay.setVisibility(View.INVISIBLE);
-
-                    RegisterReqB.setOnClickListener(new View.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(View view)  {
-                            /*int id_temp = MainActivity.loginacc.id;
-                            String username_temp = RenterNameText.getText().toString();
-                            String address_temp = RenterAddressText.getText().toString();
-                            String phoneNumb_temp = RenterPhoneNumberText.getText().toString();
-                            Renter accountRenter = requestRenter(id_temp, username_temp, address_temp, phoneNumb_temp);*/
-                            CardViewRegisterRenter.setVisibility(View.INVISIBLE);
-                            CardViewInput.setVisibility(View.INVISIBLE);
-                            CardViewDisplay.setVisibility(View.VISIBLE);
-
-                        }
-                    });
-                    CancelReqB.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            CardViewRegisterRenter.setVisibility(View.VISIBLE);
-                            CardViewInput.setVisibility(View.INVISIBLE);
-                            CardViewDisplay.setVisibility(View.INVISIBLE);
-                        }
-                    });
-                }
-            });
-
-        } if(MainActivity.loginacc.renter != null){
-            CardViewRegisterRenter.setVisibility(View.INVISIBLE);
             CardViewInput.setVisibility(View.INVISIBLE);
+        }
+        else {
+            CardViewRegisterRenter.setVisibility(View.INVISIBLE);
             CardViewDisplay.setVisibility(View.VISIBLE);
-
+            CardViewInput.setVisibility(View.INVISIBLE);
             InputName.setText(MainActivity.loginacc.renter.username);
             InputAddress.setText(MainActivity.loginacc.renter.address);
             InputPhoneNumber.setText(MainActivity.loginacc.renter.phoneNumber);
         }
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
+        RegisterReqB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CardViewDisplay.setVisibility(View.VISIBLE);
+                CardViewRegisterRenter.setVisibility(View.INVISIBLE);
+                CardViewInput.setVisibility(View.INVISIBLE);
+                Renter renter = requestRenter(MainActivity.loginacc.id, RenterNameText.getText().toString(), RenterAddressText.getText().toString(), RenterPhoneNumberText.getText().toString());
+            }
+        });
+        CancelReqB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CardViewRegisterRenter.setVisibility(View.INVISIBLE);
+                CardViewDisplay.setVisibility(View.INVISIBLE);
+                CardViewInput.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     /*public boolean onOptionsItemSelected(@NonNull MenuItem item) {
